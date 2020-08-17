@@ -1,4 +1,4 @@
-# 3D_CLoST (3D Convolution LSTM on Spatio-Temporal)
+# 3D-CLoST (3D Convolution LSTM on Spatio-Temporal)
 
 ## General Information
 
