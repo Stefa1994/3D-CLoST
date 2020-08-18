@@ -7,11 +7,6 @@ TaxiBJ: InFlow/OutFlow, Meteorology and Holidays at Beijing
 
 Download data from [OneDrive](https://1drv.ms/f/s!Akh6N7xv3uVmhOhCtwaiDRy5oDVIug) or [BaiduYun](http://pan.baidu.com/s/1qYq7ja8)
 
-Please check the data with `md5sum` command: 
-```
-md5sum -c md5sum.txt
-```
-
 **TaxiBJ** consists of the following **SIX** datasets:
 
 * BJ16_M32x32_T30_InOut.h5
