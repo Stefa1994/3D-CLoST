@@ -16,8 +16,8 @@ Requirements:
   - Put the h5 file of New York in "raw data" folder (*3D-CLoST/data/raw/NY*)
   - Put the four h5 files of Beijing in "raw data" folder (*3D-CLoST/data/raw/BJ*)
   - Enter in the folder *3D-CLoST/Notebook*
-    - Open the Data extraction file to build the dataset
-    - Open the Create Volumes file to create the volumes and the masks
+    1. Open the Data extraction file to build the dataset
+    2. Open the Create Volumes file to create the volumes and the masks
     - Run the jupyter Model - BJ file to make predictions on the Beijing dataset
     - Run the jupyter Model - NY file to make predictions on the New York dataset
 
