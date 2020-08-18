@@ -1,20 +1,18 @@
 from .imports import *
 
 def normalize(X, min_x, max_x):
-  X = 1. * (X - min_x) / (max_x - min_x)
-#   X = X * 2. - 1.
-  return X
+    X = 1. * (X - min_x) / (max_x - min_x)
+    return X
   
 def denormalize(X, min_x, max_x):
-#   X = (X + 1.) / 2.
-  X = 1. * X * (max_x - min_x) + min_x
-  return X
-  
+    X = 1. * X * (max_x - min_x) + min_x
+    return X
+
 
 def root_mean_squared_error(y_true, y_pred):
   
   # Keras RMSE  
-  return K.sqrt(K.mean(K.square(y_pred - y_true)))
+    return K.sqrt(K.mean(K.square(y_pred - y_true)))
 
 def mean_absolute_percentage_error(y_true, y_pred):
     idx = y_true > 10
@@ -49,36 +47,38 @@ def remove_incomplete_days(data, timestamps, T=48):
     
     
 def extract_data(city):
-  if (city != 'NY') & (city != 'BJ'):
-    return(print('You can insert NY or BJ as city'))
-  else:
-    path = '../data/raw/' + city
-    if city == 'NY':
-      print('Extracting data for NYCBike dataset..')
-      f = h5py.File('../data/raw/' + city + '/raw_data.h5', 'r')
-      data = f['data'].value
-      timestamps = f['date'].value
-      f.close()
-      np.save('../data/' + city + '/data.npy', data)
-      np.save('../data/' + city + '/timestamps.npy', timestamps) 
-      print('NYCBike dataset extracted')
-    elif city == 'BJ':
-      print('Extracting data for BJTaxi dataset..')
-      all_data = []
-      all_timestamps = []
-      for year in range(13,17):
-        f = h5py.File('../data/raw/' + city + '/raw_data_' + str(year) + '.h5', 'r')
-        data = f['data'].value
-        timestamps = f['date'].value
-        f.close()
-        np.save('../data/' + city + '/data_' + str(year) +'.npy', data)
-        np.save('../data/' + city + '/timestamps_' + str(year) +'.npy', timestamps)
-        all_data.append(data)
-        all_timestamps.append(timestamps)
-      np.save('../data/' + city + '/data.npy', data)
-      np.save('../data/' + city + '/timestamps.npy', timestamps)
-      print('BJTaxi dataset extracted')
-      
+    if (city != 'NY') & (city != 'BJ'):
+        return(print('You can insert NY or BJ as city'))
+    else:
+        path = '../data/raw/' + city
+        if city == 'NY':
+            print('Extracting data for NYCBike dataset..')
+          #f = h5py.File('../data/raw/' + city + '/raw_data.h5', 'r')
+            f = h5py.File('../data/raw/' + city + '/NYC14_M16x8_T60_NewEnd.h5', 'r')
+            data = f['data'].value
+            timestamps = f['date'].value
+            f.close()
+            np.save('../data/' + city + '/data.npy', data)
+            np.save('../data/' + city + '/timestamps.npy', timestamps) 
+            print('NYCBike dataset extracted')
+        elif city == 'BJ':
+            print('Extracting data for BJTaxi dataset..')
+            all_data = []
+            all_timestamps = []
+            for year in range(13,17):
+                #f = h5py.File('../data/raw/' + city + '/raw_data_' + str(year) + '.h5', 'r')
+                f = h5py.File('../data/raw/' + city + '/BJ' + str(year) + '_M32x32_T30_InOut.h5', 'r')
+                data = f['data'].value
+                timestamps = f['date'].value
+                f.close()
+                np.save('../data/' + city + '/data_' + str(year) +'.npy', data)
+                np.save('../data/' + city + '/timestamps_' + str(year) +'.npy', timestamps)
+                all_data.append(data)
+                all_timestamps.append(timestamps)
+            np.save('../data/' + city + '/data.npy', data)
+            np.save('../data/' + city + '/timestamps.npy', timestamps)
+            print('BJTaxi dataset extracted')
+
       
 def swish(x, beta = 1):
-  return (x * sigmoid(beta * x))
+    return (x * sigmoid(beta * x))
