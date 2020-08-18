@@ -7,11 +7,6 @@ BikeNYC: New-Flow/End-Flow at NYC
 
 Download data from [OneDrive](https://1drv.ms/f/s!Akh6N7xv3uVmhOhCtwaiDRy5oDVIug) or [BaiduYun](http://pan.baidu.com/s/1mhIPrRE)
 
-Please check the data with `md5sum` command: 
-```
-md5sum -c md5sum.txt
-```
-
 **BikeNYC** dataset is a `hdf5` file named `NYC14_M16x8_T60_NewEnd.h5`, which includes two subsets:
 
 * `date`: a list of timeslots, which is associated the **data**. 
