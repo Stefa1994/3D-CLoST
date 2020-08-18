@@ -48,14 +48,6 @@ Each `*.h5` file has two following subsets:
 * `date`: a list of timeslots, which is associated the **data**. 
 * `data`: a 4D tensor of shape (number_of_timeslots, 2, 32, 32), of which `data[i]` is a 3D tensor of shape (2, 32, 32) at the timeslot `date[i]`, `data[i][0]` is a `32x32` inflow matrix and `data[i][1]` is a `32x32` outflow matrix. 
 
-### Example
-
-You can get the data info with following command: 
-```
-python -c "from deepst.datasets import stat; stat('BJ16_M32x32_T30_InOut.h5')"
-```
-
-The output looks like: 
 ```
 =====stat=====
 data shape: (7220, 2, 32, 32)
