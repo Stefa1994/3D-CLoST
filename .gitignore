@@ -1,0 +1,6 @@
+# remove dataset
+/data/raw/NY/*.h5
+/data/raw/BJ/*.h5
+#!/data/raw/NY/ReadMe.md
+# remove jupyter notebook
+/Notebook/2 - Create Volumes - NY.ipynb
