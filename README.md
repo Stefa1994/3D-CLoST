@@ -15,9 +15,10 @@ Requirements:
   - Download data from [OneDrive](https://1drv.ms/f/s!Akh6N7xv3uVmhOhCtwaiDRy5oDVIug) or [BaiduYun](http://pan.baidu.com/s/1mhIPrRE)
   - Put the h5 file of New York in "raw data" folder (*3D-CLoST/data/raw/NY*)
   - Put the four h5 files of Beijing in "raw data" folder (*3D-CLoST/data/raw/BJ*)
-  - Open the data extraction file (*3D-CLoST/Notebook*) with jupyter notebook to build the dataset
-  - Open terminal in the same folder (*stdn/*)
-  - Run with "python main.py" for NYC taxi dataset, or "python main.py --dataset=bike" for NYC bike dataset
+  - Open the Data extraction file (*3D-CLoST/Notebook*) with jupyter notebook to build the dataset
+  - Open the Create Volumes file (*3D-CLoST/Notebook*) with jupyter notebook to create the volumes and the masks
+  - Run the jupyter Model - BJ file (*3D-CLoST/Notebook*) to make predictions on the Beijing dataset
+  - Run the jupyter Model - NY file (*3D-CLoST/Notebook*) to make predictions on the New York dataset
 
 ## License
 
