@@ -32,11 +32,11 @@ def create_data_dict(city, X_name, y_name):
 	
 def create_train_test(city, X, y, external_data, test_days):
 
-  # Funzione che divide training set da test set.
-  # Input: - X: Volume contenente i dati da passare in input al modello
-  #        - y: Volume contenente i dati da prevedere
-  #        - external_data: Volume con le informazioni esterne (meteo, festivitĂÂ ,...)
-  #        - test_days: numero di giorni del test set
+  # Function that divides training set from test set.
+  # Input: - X: Volume containing the data to be passed as input to the model
+  # - y: Volume containing the data to predict
+  # - external_data: Volume with external information (weather, holidays, ...)
+  # - test_days: number of days of the test set
 
   if (city != 'NY') & (city != 'BJ'):
 
@@ -63,19 +63,22 @@ def CLoST3D(city, X, y,  external_data, test_days,
             lstm = None, lstm_number = 0,
             add_external_info = False):
   
-  # Funzione utilizzata per trainare il modello. Vengono divisi trainig e test set, aggiunte le informazioni esterne e creata la rete.
-  # Infine viene addrestato il modello e salvati i risultati nel file './drive/My Drive/Smart Mobility Prediction/dataset/model_runs.csv'
-  # Input: 
-  #     - X: Dict. Dizionario contenente tutti i possibili diversi Volumi di input
-  #     - name_x: Str. Nome della chiave del dizionario X su cui si vuole addestrare il modello
-  #     - y: X: Dict. Dizionario contenente tutti i possibili diversi output
-  #     - name_y: Str. Nome della chiave del dizionario y su cui si vuole addestrare il modello
-  #     - external_data: np.array. Volume con le informazioni esterne (meteo, festivitÃ ,...)
-  #     - test_days: int. Numero di giorni del test set
-  #     - epochs: int. Numero di epoche su cui addestrare il modello. Default = 10
-  #     - mask: np.array. Filtro che viene applicato ai dati in output al modello. Se non viene passato, non viene applicato nessun filtro
-  #     - lstm: int. Parametro da passare al layer LSTM. Se uguale a None, non viene aggiunto lo strato di LSTM.
-  #     - add_external_info: bool. Parametro per inserire o meno le informazioni esterne.
+
+  # Function used to tow the model. Training and test sets are divided, external information added and network created.
+  # Finally the model is trained and the results saved in the file './drive/My Drive / Smart Mobility Prediction / dataset / model_runs.csv'
+  # Input:
+  # - X: Dict. Dictionary containing all possible different input volumes
+  # - name_x: Str. Name of the X dictionary key on which you want to train the model
+  # - y: X: Dict. Dictionary containing all possible different outputs
+  # - name_y: Str. Name of the dictionary key y on which you want to train the model
+  # - external_data: np.array. Volume with external information (weather, holidays, ...)
+  # - test_days: int. Number of days of the test set
+  # - epochs: int. Number of epochs to train the model on. Default = 10
+  # - mask: np.array. Filter that is applied to the data output to the model. If not passed, no filter is applied
+  # - lstm: int. Parameter to pass to the LSTM layer. If equal to None, the LSTM layer is not added.
+  # - add_external_info: bool. Parameter to insert external information or not.
+
+
 
   
   if ((lstm == None) & (lstm_number > 0)) | ((lstm != None) & (lstm_number == 0)):
