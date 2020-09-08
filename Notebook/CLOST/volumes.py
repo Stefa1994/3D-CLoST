@@ -4,8 +4,8 @@ from .utils import normalize, denormalize
 	
 def create_dict(data, timestamps):
 
-  # Funzione che crea un dizionario con matrice di inflow (_End) o outflow (_Start) per ogni timestamp.
-  
+  # Function that creates a dictionary with inflow (_End) or outflow (_Start) matrix for each timestamp.
+
   ny_dict = {}
   for index in range(len(data)):
     ny_dict[timestamps[index] + '_Inflow'] = data[index][0].tolist()
@@ -71,13 +71,16 @@ def add_date_to_volume(city, timestamp, date_list, step, add_or_check = 'check',
 	
 def set_volume_date(city, date_list, step, add_hour = True, add_half = False, add_day_before = False, add_week_before = False):
   
-  # Funzione che crea una lista contenente i timestamp con cui creare il volume.
-  # Input: 
-  #    - city: str. CittÃƒÂ  considerata. PuÃƒÂ² essere 'BJ' per il dataset taxi di Pechino o 'NY' per il dataset bici di New York
-  #    - date_list: list. Lista di timestamp.
-  #    - step: int. Numero di ore con cui creare il volume:
-  #    - add_day_before: bool. Se True, aggiunge la stessa ora da predire del giorno precedente
-  #    - add_week_before: bool. Se True, aggiunge la stessa ora da predire dello stesso giorno della settimana prima
+   
+  # Function that creates a list containing the timestamps with which to create the volume.
+  # Input:
+  # - city: str. City considered. It can be 'BJ' for the Beijing taxi dataset or 'NY' for the New York bike dataset
+  # - date_list: list. List of timestamps.
+  # - step: int. Number of hours to create the volume:
+  # - add_day_before: bool. If True, adds the same time to predict as the previous day
+  # - add_week_before: bool. If True, it adds the same time to predict from the same day of the week before
+
+
 
   if (city != 'NY') & (city != 'BJ'):
 
